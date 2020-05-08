@@ -1,0 +1,41 @@
+void setup() {
+  //sygnalizacja swietlna
+  pinMode(10,OUTPUT); //czerwony
+  pinMode(9,OUTPUT); //żółty
+  pinMode(8,OUTPUT); //zielony
+  pinMode(7,INPUT_PULLUP); //przycisk
+
+  digitalWrite(10,LOW);
+  digitalWrite(9,LOW);
+  digitalWrite(8,LOW);
+}
+ 
+void loop(){
+  digitalWrite(10, LOW);
+  digitalWrite(9, LOW);
+  digitalWrite(8, HIGH); 
+  
+  delay(1000);
+  while (digitalRead(7) == HIGH) {} //Czekaj na wciśnięcie przycisku
+ 
+  digitalWrite(10, LOW);
+  digitalWrite(9, HIGH);
+  digitalWrite(8, LOW);
+  
+  delay(1000);
+  while (digitalRead(7) == HIGH) {}
+ 
+  digitalWrite(10, HIGH);
+  digitalWrite(9, LOW);
+  digitalWrite(8, LOW);
+
+  delay(1000);
+  while (digitalRead(7) == HIGH) {} //Czekaj na wciśnięcie przycisku
+ 
+  digitalWrite(10, HIGH);
+  digitalWrite(9, HIGH);
+  digitalWrite(8, LOW);
+
+  delay(1000);
+  while (digitalRead(7) == HIGH) {} //Czekaj na wciśnięcie przycisku
+}
